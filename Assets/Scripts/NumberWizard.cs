@@ -9,19 +9,9 @@ public class NumberWizard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print ("Welcome to Mathematic Horcrux");
-		print("Pick a number between 1 and 1000,but dont tell me");
-		
-		int max=1000;
-		int min=0;
-		
-		print("The maximum number you can pick is "+max);
-		print("The minimum number you can pick is "+min);
-		
-		print("Is your number greater or lesser than "+guess);
-		print("Up for greater,Down for lower,Enter for equal");
-		
+		startGame();	
 	}
+	
 	
 	// Update is called once per frame
 	void Update () {
@@ -42,7 +32,28 @@ public class NumberWizard : MonoBehaviour {
 		else if(Input.GetKeyDown("return"))
 		{
 			print("I won,Woohu :P");
+			startGame();
 		}
+	}
+	
+	
+	void startGame()
+	{
+		max=1000;
+		min=1;
+		guess=500;
+		print ("=============================");
+		print ("Welcome to Mathematic Horcrux");
+		print("Pick a number between 1 and 1000,but dont tell me");
+		
+		print("The maximum number you can pick is "+max);
+		print("The minimum number you can pick is "+min);
+		
+		//Updated max to 1001,so that user can choose 1000
+		max+=1;
+		
+		print("Is your number greater or lesser than "+guess);
+		print("Up for greater,Down for lower,Enter for equal");
 	}
 	
 	void updateGuess()
