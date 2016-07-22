@@ -37,12 +37,14 @@ public class NumberWizard : MonoBehaviour {
 	
 	void updateGuess()
 	{
-		guess=(max+min)/2;
-		text.text=guess.ToString();
-		numberOfTries-=1;
 		if(numberOfTries<=0)
 		{
 			Application.LoadLevel("Win");
 		}
+		if(numberOfTries!=0){
+			guess=(max+min)/2;
+			text.text=guess.ToString();
+		}
+		numberOfTries-=1;
 	}
 }
