@@ -41,10 +41,10 @@ public class NumberWizard : MonoBehaviour {
 		{
 			Application.LoadLevel("Win");
 		}
-		if(numberOfTries!=0){
+		numberOfTries-=1;
+		if(numberOfTries>=0){
 			guess=(max+min)/2;
 			text.text=guess.ToString();
 		}
-		numberOfTries-=1;
 	}
 }
